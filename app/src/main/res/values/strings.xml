@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyCinema</string>
+    <string name="select_photo">Chọn Ảnh</string>
+    <string name="movie">Tên Phim</string>
+    <string name="genre">Thể loại</string>
+    <string name="opening_day">Ngày phát hành</string>
+    <string name="description">Mô tả</string>
+    <string name="create_movie">Tạo Phim</string>
+    <string name="search_hint">Search</string>
+    <string name="login">Đăng nhập</string>
+    <string name="signup">Đăng ký</string>
+    <string name="change">Đổi mật khẩu</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="fa_icon_password">\uf084</string>
+    <string name="fa_icon_email">\uf0e0</string>
+    <string name="change_password">Đặt lại mật khẩu</string>
+
+    <string-array name="array_genre">
+        <item>Hành Động</item>
+        <item>Tình Cảm</item>
+        <item>Viễn Tưởng</item>
+        <item>Hài Hước</item>
+        <item>Suy Luận</item>
+    </string-array>
+</resources>

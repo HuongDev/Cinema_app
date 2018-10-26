@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.huong.mycinema"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "int", "LIMIT", "100"
+        buildConfigField "String", "BASEURL", "\"https://cinema-hatin.herokuapp.com/\""
+        buildConfigField "int", "CACHETIME", "432000" // 5days
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /**
+     * Support libs
+     */
+    implementation "com.android.support:appcompat-v7:${libsVersions.support}"
+    implementation "com.android.support:animated-vector-drawable:${libsVersions.support}"
+    implementation "com.android.support:customtabs:${libsVersions.support}"
+    implementation "com.android.support:design:${libsVersions.support}"
+    implementation "com.android.support:recyclerview-v7:${libsVersions.support}"
+    implementation "com.android.support:cardview-v7:${libsVersions.support}"
+    implementation "com.android.support:percent:${libsVersions.support}"
+    implementation "com.android.support:support-v4:${libsVersions.support}"
+    implementation "com.android.support:palette-v7:${libsVersions.support}"
+    implementation "com.android.support:support-annotations:${libsVersions.support}"
+    implementation "com.android.support.constraint:constraint-layout:${libsVersions.constraintLayout}"
+    implementation "com.android.support:multidex:${libsVersions.multidex}"
+
+    /**
+     * NetWorking
+     */
+    implementation "com.google.code.gson:gson:${libsVersions.gson}"
+    implementation "com.squareup.retrofit2:retrofit:${libsVersions.retrofit2}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${libsVersions.retrofit2}"
+    implementation "com.squareup.retrofit2:converter-gson:${libsVersions.retrofit2}"
+    implementation "com.squareup.retrofit2:converter-scalars:${libsVersions.retrofit2}"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    /**
+     * Dagger 2
+     */
+    implementation "com.google.dagger:dagger:${libsVersions.dagger2}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libsVersions.dagger2}"
+
+    /**
+     *  RxJava 2
+     */
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+//    implementation 'io.reactivex.rxjava2:rxjava:2.1.13'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.3.0'
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:$libsVersions.room"
+    kapt "android.arch.persistence.room:compiler:$libsVersions.room"
+
+    /**
+     * Arch
+     */
+    implementation "android.arch.lifecycle:extensions:${libsVersions.lifecycle}"
+    annotationProcessor "android.arch.lifecycle:compiler:${libsVersions.lifecycle}"
+
+    /**
+     * Butter knife
+     */
+    implementation "com.jakewharton:butterknife:${libsVersions.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${libsVersions.butterknife}"
+
+    /**
+     * Glide
+     */
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    /**
+     * SweetAlertDialog
+     */
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+}
